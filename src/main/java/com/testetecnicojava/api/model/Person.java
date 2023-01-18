@@ -1,5 +1,7 @@
 package com.testetecnicojava.api.model;
 
+import com.testetecnicojava.api.dto.PersonDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,4 +22,10 @@ public class Person{
 
   @Column(length = 10, nullable = false)
   private String birthDate;  
+
+
+  public Person(PersonDTO data){
+    this.name = data.name();
+    this.birthDate = data.birthDate();
+  }
 }
