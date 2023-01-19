@@ -22,7 +22,7 @@ public class Person{
   @Column(length = 100, nullable = false)
   private String name;
 
-  @Column(length = 10, nullable = false)
+  @Column(length = 15, nullable = false)
   private String birthDate;  
 
 
