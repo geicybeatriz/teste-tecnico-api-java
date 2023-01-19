@@ -15,6 +15,8 @@ import com.testetecnicojava.api.dto.PersonDTO;
 import com.testetecnicojava.api.model.Person;
 import com.testetecnicojava.api.services.PersonServices;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/person")
 public class PersonController {
@@ -24,8 +26,7 @@ public class PersonController {
 
   @PostMapping
   @ResponseStatus(HttpStatus.CREATED)
-  public void create(@RequestBody PersonDTO req){
-    //criar services para fazer o tratamento dos dados recebidos
+  public void create(@RequestBody @Valid PersonDTO req){
     personServices.create(req);
   }
 

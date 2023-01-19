@@ -1,5 +1,7 @@
 package com.testetecnicojava.api.model;
 
+import java.util.Date;
+
 import com.testetecnicojava.api.dto.PersonDTO;
 
 import jakarta.persistence.Column;
@@ -22,8 +24,8 @@ public class Person{
   @Column(length = 100, nullable = false)
   private String name;
 
-  @Column(length = 15, nullable = false)
-  private String birthDate;  
+  @Column(nullable = false)
+  private Date birthDate;  
 
 
   public Person(PersonDTO data){
