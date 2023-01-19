@@ -29,5 +29,12 @@ public class PersonServices {
   public List<Person> findAll(){
     return personRepository.findAll();
   }
+
+  public List<Person> findByNameContaining(String name){
+    List<Person> result = personRepository.findByNameContainingIgnoreCase(name);
+    if(result.isEmpty() == true) {
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Não há pessoas cadastradas com este nome");
+    } else return result;
+  }
   
 }
