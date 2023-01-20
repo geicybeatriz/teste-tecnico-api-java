@@ -1,6 +1,7 @@
 package com.testetecnicojava.api.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,5 +37,13 @@ public class PersonServices {
       throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Não há pessoas cadastradas com este nome");
     } else return result;
   }
+
+  public Optional<Person> findById(Long id){
+    return personRepository.findById(id);
+  }
+
+  
+    
+  
   
 }

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 //import com.testetecnicojava.api.dto.PersonDTO;
-import com.testetecnicojava.api.services.PersonServices;
+//import com.testetecnicojava.api.services.PersonServices;
 
 @SpringBootTest
 class ApiApplicationTests {
@@ -18,7 +18,7 @@ class ApiApplicationTests {
 	@Test
 	@DisplayName("Deve cadastrar uma pessoa")
 	void createPerson() {
-		PersonServices personServices = new PersonServices();
+		//PersonServices personServices = new PersonServices();
 		//acho que terei de usar mockito
 		
 		//personServices.create(personTest);
