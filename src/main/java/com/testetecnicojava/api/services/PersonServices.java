@@ -42,8 +42,15 @@ public class PersonServices {
     return personRepository.findById(id);
   }
 
-  
-    
-  
-  
+  public void updatePerson(Long id, PersonDTO person){
+    personRepository
+      .findById(id)
+      .map(client -> {
+        client.setName(person.name());
+        client.setBirthDate(person.birthDate());
+        personRepository.save(client);
+        return Void.TYPE;
+      })
+      .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Pessoa não encontrada"));;
+  }
 }
