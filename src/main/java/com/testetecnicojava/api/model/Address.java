@@ -1,14 +1,18 @@
 package com.testetecnicojava.api.model;
 
+import com.testetecnicojava.api.dto.AddressDTO;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
 public class Address {
 
   @Id
@@ -32,4 +36,13 @@ public class Address {
 
   @Column(length = 10, nullable = false)
   private Boolean isMainAddress;  
+
+  public Address(AddressDTO address, Long personId){
+    this.street = address.street();
+    this.number = address.number();
+    this.cep = address.cep();
+    this.city = address.city();
+    this.isMainAddress = address.isMainAddress();
+    this.personId = personId;
+  }
 }
